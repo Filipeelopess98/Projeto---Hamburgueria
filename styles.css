@@ -27,6 +27,7 @@ body {
     text-transform: uppercase;
     animation: ledEffect 1.5s infinite;
     font-weight: 400;
+
 }
 
 h1 span {
@@ -36,19 +37,23 @@ h1 span {
     font-weight: 600;
 }
 
+
+
 @keyframes ledEffect {
     0% {
-        text-shadow: 0 0 10px #f1bb0a, 0 0 20px #242323, 0 0 40px #ff9101;
+        text-shadow: 0 0 10px #000000, 0 0 20px #242323, 0 0 40px #ff9101;
     }
 
     50% {
-        text-shadow: 0 0 10px #f1bb0a, 0 0 20px #242323, 10px 10px 60px #ff8800;
+        text-shadow: 0 0 10px #000000, 0 0 20px #242323, 10px 10px 60px #ff8800;
     }
 
     100% {
-        text-shadow: 0 0 10px #f1bb0a, 0 0 20px #242323, 0 0 40px #ff9101;
+        text-shadow: 0 0 10px #000000, 0 0 20px #242323, 0 0 40px #ff9101;
     }
 }
+
+
 
 button {
     background-color: #ffffff;
@@ -56,19 +61,25 @@ button {
     border: none;
     border-radius: 20px;
     color: #000000;
-    padding: 20px;
     cursor: pointer;
     font-weight: 600;
     width: 190px;
     font-size: 12px;
-    height: 60px;
-    transition: box-shadow 0.3s ease-in-out;
+    height: 50px;
+    padding: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button {
 
     animation: blink 1s infinite alternate;
 
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes blink {
@@ -97,29 +108,36 @@ ul {
 
     display: grid;
     list-style: none;
-    grid-template-columns: 220px 220px 220px;
+    grid-template-columns: 200px 200px 200px;
     justify-content: center;
     gap: 30px;
     margin-top: 10px;
+    list-style: none;
+    perspective: 800px;
+
 
 }
 
 img {
     width: 100%;
+    height: 180px;
     border-radius: 12px;
     padding: 5px 5px 5px 5px;
-    box-shadow: 1px 1px 1px rgb(255, 153, 0);
 }
 
 li {
 
     padding: 5px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #f18c07;
     display: inline-block;
     margin: 10px;
     padding: 10px;
     transition: box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px) rotateY(0);
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 li {
@@ -127,31 +145,127 @@ li {
 }
 
 
+
+li:hover {
+    transform: rotateY(360deg) translateZ(25px);
+}
+
 @keyframes blink {
     0% {
-        box-shadow: 0 2px 5px rgb(255, 153, 0);
+        box-shadow: 0 2px 5px rgb(0, 0, 0);
     }
 
     100% {
-        box-shadow: 0 2px 20px rgb(255, 153, 0);
+        box-shadow: 0 2px 20px rgb(0, 0, 0);
     }
 
 }
 
 
 p {
-    color: #0a0a0a;
+
     font-weight: 600;
     margin: 5px;
     text-align: center;
-    font-size: 15px;
-
+    font-size: 13px;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    color: #f7f7f7;
 
 }
 
+
 .price {
-    color: #050505;
-    font-weight: 500;
-    font-size: 12px;
+    font-weight: 600;
+    font-size: 17px;
     text-align: center;
+    padding-top: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #000000;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .title {
+        font-size: 24px;
+    }
+
+    h1 span {
+        font-size: 36px;
+    }
+
+    button {
+        width: 120px;
+        height: 30px;
+    }
+
+    button {
+        background-color: #ffffff;
+        box-shadow: 2px 2px 2px 2px #05050500;
+        border: none;
+        border-radius: 20px;
+        color: #000000;
+        cursor: pointer;
+        font-weight: 600;
+        width: 160px;
+        font-size: 12px;
+        height: 45px;
+        padding: auto;
+
+    }
+
+    .container-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    ul {
+        display: grid;
+        list-style: none;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+        list-style: none;
+        perspective: 800px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        padding: 5px;
+    }
+
+    li {
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #f18c07;
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    p {
+        font-weight: 600;
+        margin: 5px;
+        text-align: center;
+        font-size: 13px;
+        padding-top: 2px;
+        padding-bottom: 5px;
+        color: #f7f7f7;
+    }
+
+    .price {
+        font-weight: 600;
+        font-size: 17px;
+        text-align: center;
+        padding-top: 5px;
+    }
+
 }
