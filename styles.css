@@ -57,7 +57,7 @@ h1 span {
 
 button {
     background-image: linear-gradient(#ffb327, #e28112);
-    box-shadow: 2px 2px 2px 2px #05050500;
+    box-shadow: 2px 2px 2px #05050500;
     border: none;
     border-radius: 20px;
     color: #000000;
@@ -112,11 +112,7 @@ ul {
     justify-content: center;
     gap: 30px;
     margin-top: 10px;
-    list-style: none;
     perspective: 800px;
-
-
-
 }
 
 img {
@@ -128,10 +124,7 @@ img {
 
 
 
-
-
 li {
-
     padding: 5px;
     border-radius: 10px;
     background-image: linear-gradient(#ffb327, #e28112);
@@ -156,6 +149,7 @@ li:hover {
     transform: rotateY(360deg) translateZ(25px);
 }
 
+
 @keyframes blink {
     0% {
         box-shadow: 0 2px 5px rgb(0, 0, 0);
@@ -169,20 +163,19 @@ li:hover {
 
 
 p {
-
     font-weight: 600;
     margin: 5px;
     text-align: center;
     font-size: 13px;
     padding-top: 2px;
     padding-bottom: 5px;
-    color: #f7f7f7;
+    color: #000000;
 
 }
 
 
 .price {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 17px;
     text-align: center;
     padding-top: 5px;
