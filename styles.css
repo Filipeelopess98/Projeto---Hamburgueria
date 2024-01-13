@@ -56,7 +56,7 @@ h1 span {
 
 
 button {
-    background-color: #ffffff;
+    background-image: linear-gradient(#ffb327, #e28112);
     box-shadow: 2px 2px 2px 2px #05050500;
     border: none;
     border-radius: 20px;
