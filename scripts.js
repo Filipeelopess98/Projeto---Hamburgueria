@@ -24,7 +24,7 @@ function showAll(productArray) {
 function discountAll() {
     const newPrice = options.map((product) => ({
         ...product,
-        price: product.price * 0.9,
+        price: (product.price * 0.9).toFixed(2),
     }))
     showAll(newPrice)
 }
