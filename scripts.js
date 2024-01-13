@@ -56,3 +56,4 @@ buttonDiscoutsAll.addEventListener('click', discountAll)
 buttonTotals.addEventListener('click', totalItens)
 showVegan.addEventListener('click', veganonly)
 
+
